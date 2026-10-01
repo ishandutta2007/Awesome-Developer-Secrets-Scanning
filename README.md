@@ -52,9 +52,9 @@ Secrets scanning tools actively prevent data breaches by inspecting source code,
 
 ## 🔓 Open-Source GitHub Repositories
 
-Open-source credential scanning software powers security pipelines globally. Below is the curated list of top open-source scanners, sorted by **GitHub Star Count** (descending order). 
+Open-source credential scanning software powers security pipelines globally. Below is the curated list of top open-source scanners, sorted by **GitHub Stars_Count** (descending order). 
 
-*Click on any star badge to visit the official stargazers page for that repository:*
+*Click on any Stars_Badge to visit the official stargazers page for that repository:*
 
 1. **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)** <a href="https://github.com/aquasecurity/trivy/stargazers"><img src="https://img.shields.io/github/stars/aquasecurity/trivy?style=social&color=white" alt="Trivy Stars"/></a>  
    Comprehensive vulnerability & secret scanner for container images, filesystems, git repositories, and Kubernetes configurations.
