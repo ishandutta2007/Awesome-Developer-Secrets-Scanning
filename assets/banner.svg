@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <!-- Dark Cyber Gradient Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#07152b"/>
+      <stop offset="100%" stop-color="#040914"/>
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f00ff"/>
+      <stop offset="100%" stop-color="#e100ff"/>
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7f00ff" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.6"/>
+    </pattern>
+
+    <!-- Filters for Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); opacity: 0.3; }
+      50% { transform: scale(1.05); opacity: 0.7; }
+      100% { transform: scale(0.95); opacity: 0.3; }
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes scanLine {
+      0% { transform: translateY(0); opacity: 0.2; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(320px); opacity: 0.2; }
+    }
+    .pulsing-ring { animation: pulseRing 6s infinite ease-in-out; transform-origin: 1050px 160px; }
+    .floating-element { animation: floatParticle 4s infinite ease-in-out; }
+    .floating-delay { animation: floatParticle 5s infinite ease-in-out 1.5s; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="320" fill="url(#bgGrad)" rx="16"/>
+  <rect width="1200" height="320" fill="url(#cyberGrid)" rx="16"/>
+
+  <!-- Background Glowing Orbs (Dynamic Background Layer) -->
+  <circle cx="150" cy="80" r="180" fill="#00f2fe" opacity="0.08" filter="url(#glow)"/>
+  <circle cx="1050" cy="160" r="220" fill="#7f00ff" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Background Pulse Rings (Safely behind text) -->
+  <circle class="pulsing-ring" cx="1050" cy="160" r="140" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4"/>
+  <circle class="pulsing-ring" cx="1050" cy="160" r="90" fill="none" stroke="#e100ff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Key & Shield Graphic Icon on Right (Background Graphic Layer) -->
+  <g transform="translate(1000, 110)">
+    <!-- Shield Outline -->
+    <path d="M50 10 L90 30 V70 C90 100 50 120 50 120 C50 120 10 100 10 70 V30 Z" 
+          fill="url(#shieldGrad)" stroke="#00f2fe" stroke-width="2" filter="url(#glow)"/>
+    <!-- Key Hole Icon inside Shield -->
+    <circle cx="50" cy="50" r="12" fill="#0a0f1d" stroke="#00f2fe" stroke-width="3"/>
+    <path d="M46 58 L54 58 L57 82 L43 82 Z" fill="#00f2fe"/>
+  </g>
+
+  <!-- Floating Tech Badges (Right side background decoration) -->
+  <g class="floating-element" transform="translate(860, 60)">
+    <rect width="120" height="32" rx="16" fill="#1e293b" fill-opacity="0.8" stroke="#00f2fe" stroke-width="1"/>
+    <text x="60" y="21" fill="#00f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">🔑 API Keys</text>
+  </g>
+
+  <g class="floating-delay" transform="translate(890, 220)">
+    <rect width="130" height="32" rx="16" fill="#1e293b" fill-opacity="0.8" stroke="#e100ff" stroke-width="1"/>
+    <text x="65" y="21" fill="#e100ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">⚡ Git History</text>
+  </g>
+
+  <!-- Left Accent Line -->
+  <rect x="60" y="75" width="6" height="170" rx="3" fill="url(#accentCyan)" filter="url(#glow)"/>
+
+  <!-- Foreground Title and Subtitle (Crisp & Clear) -->
+  <text x="85" y="125" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.5">
+    Awesome Developer Secrets Scanning 🛡️
+  </text>
+
+  <text x="85" y="165" fill="#00f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" filter="url(#textGlow)">
+    Detect Leaked Credentials, API Keys, Tokens & Private Keys Before Production
+  </text>
+
+  <text x="85" y="205" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="400">
+    Curated List of SaaS Platforms & Open-Source Tools • Enterprise DevSecOps Security
+  </text>
+
+  <!-- Bottom Accent Pills -->
+  <g transform="translate(85, 228)">
+    <rect x="0" y="0" width="110" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="55" y="17" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">🔒 Git Security</text>
+
+    <rect x="120" y="0" width="125" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="182" y="17" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">🚀 Pre-Commit Hooks</text>
+
+    <rect x="255" y="0" width="135" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="322" y="17" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">⚡ CI/CD Pipelines</text>
+  </g>
+</svg>
