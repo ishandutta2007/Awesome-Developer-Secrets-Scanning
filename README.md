@@ -52,7 +52,7 @@ Secrets scanning tools actively prevent data breaches by inspecting source code,
 
 ## 🔓 Open-Source GitHub Repositories
 
-Open-source credential scanning software powers security pipelines globally. Below is the curated list of top open-source scanners, sorted by **GitHub Stars_Count** (descending order). 
+Open-source credential scanning software powers security pipelines globally. Below is the curated list of top open-source scanners, sorted by **GitHub_Stars_Count** (descending order). 
 
 *Click on any Stars_Badge to visit the official stargazers page for that repository:*
 
